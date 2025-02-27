@@ -11,7 +11,12 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
+  // RULES WITHOUT RED LINE ERRORS
   rules: {
+    ...js.configs.recommended.rules,
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+    ...reactHooks.configs.recommended.rules,
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
       'warn',
